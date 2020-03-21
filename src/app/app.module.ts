@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OnboardingComponent } from './onboarding/onboarding.component';
 import { OnboardingFinishedComponent } from './onboarding-finished/onboarding-finished.component';
 import { StatusTrackerComponent } from './status-tracker/status-tracker.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 import { StatusQuestionnaireComponent } from './status-questionnaire/status-questionnaire.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MatMenuModule } from '@angular/material/menu';
@@ -24,6 +25,7 @@ registerLocaleData(localeDe, 'de-DE');
     AppComponent,
     OnboardingComponent,
     OnboardingFinishedComponent,
+    LandingPageComponent,
     StatusTrackerComponent,
     StatusQuestionnaireComponent
   ],
