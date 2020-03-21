@@ -1,6 +1,5 @@
 * {
   line-height: 49px;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
   font-size: 25px;
 }
 
@@ -14,7 +13,7 @@
 
 .quarantine-status-day {
   font-size: 14px;
-  font-weight: 300;
+  font-family: Roboto-Regular, "Helvetica Neue", sans-serif;
   color: black;
   horiz-align: left;
   vertical-align: middle;

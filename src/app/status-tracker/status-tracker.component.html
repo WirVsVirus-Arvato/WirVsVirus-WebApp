@@ -24,9 +24,7 @@
 <div class="status-check-container">
   <p class="city">In {{city}}</p>
   <p class="message danger" *ngIf="messageDanger">{{messageDanger}} ></p>
-
   <mat-progress-bar mode="determinate" value="{{coronaStatus}}" style="height: 15px;"></mat-progress-bar>
-
   <mat-grid-list cols="6" class="container-button-bar">
     <mat-grid-tile>
       <button mat-stroked-button color="green">Alles super</button>
@@ -72,8 +70,8 @@
     </mat-grid-tile>
   </mat-grid-list>
 </div>
-<div class="status-check-container">
-  <mat-grid-list cols="2" class="container-button-bar">
+<div>
+  <mat-grid-list cols="2">
     <mat-grid-tile>
       <a style="width: 100%;text-align: left; color: #0068A9;">Live Tracking</a>
     </mat-grid-tile>
