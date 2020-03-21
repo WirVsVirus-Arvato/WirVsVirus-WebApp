@@ -13,6 +13,12 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import localeEn from '@angular/common/locales/en';
+import localeDe from '@angular/common/locales/de';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localeEn, 'en-GB');
+registerLocaleData(localeDe, 'de-DE');
 
 @NgModule({
   declarations: [
