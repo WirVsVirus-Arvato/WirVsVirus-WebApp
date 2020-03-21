@@ -2,15 +2,15 @@
   <p class="quarantine-status-day">
     Tag {{quarantineDayActual}} von {{quarantineDayGoal}}
     <svg width="25" height="50" *ngFor="let i of days(quarantineDayActual).fill(1)">
-      <ellipse cx="15" cy="40" rx="8" ry="8" style="fill:#B0C800;"/>
+      <ellipse cx="15" cy="40" rx="5px" ry="5px" style="fill:#B0C800;"/>
     </svg>
     <svg width="25" height="50" *ngFor="let i of days(quarantineDayGoal).fill(1)">
-      <ellipse cx="15" cy="40" rx="8" ry="8" style="fill:transparent;stroke:#D9D9D9;stroke-width:1"/>
+      <ellipse cx="15" cy="40" rx="5px" ry="5px" style="fill:transparent;stroke:#D9D9D9;stroke-width:1"/>
     </svg>
 </div>
 <div class="status-check-container">
   <p>Wie geht es Ihnen heute?</p>
-    <mat-grid-list cols="2" class="container-button-bar">
+    <mat-grid-list cols="2" class="container-button-bar" rowHeight="200px">
       <mat-grid-tile>
         <button mat-raised-button color="good">GUT</button>
       </mat-grid-tile>
@@ -25,7 +25,7 @@
   <p class="city">In {{city}}</p>
   <p class="message danger" *ngIf="messageDanger">{{messageDanger}} ></p>
   <mat-progress-bar mode="determinate" value="{{coronaStatus}}" style="height: 15px;"></mat-progress-bar>
-  <mat-grid-list cols="6" class="container-button-bar">
+  <mat-grid-list cols="6" class="container-button-bar" rowHeight="200px">
     <mat-grid-tile>
       <button mat-stroked-button color="green">Alles super</button>
     </mat-grid-tile>
@@ -71,7 +71,7 @@
   </mat-grid-list>
 </div>
 <div>
-  <mat-grid-list cols="2">
+  <mat-grid-list cols="2" rowHeight="100px">
     <mat-grid-tile>
       <a style="width: 100%;text-align: left; color: #0068A9;">Live Tracking</a>
     </mat-grid-tile>
