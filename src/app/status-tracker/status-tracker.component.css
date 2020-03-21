@@ -38,6 +38,10 @@ button {
   text-align: center;
 }
 
+.grid-align-left {
+  left: 150px !important;
+}
+
 .mat-good {
   background-color: #B0C800;
   color: white;
