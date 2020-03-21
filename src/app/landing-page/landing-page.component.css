@@ -1,32 +1,47 @@
-.landing-page-container{
+.landing-page-container {
   display: flex;
   width: 100%;
   height: 80%;
   flex-flow: column;
+  align-content: space-around;
   justify-content: space-around;
 }
-.welcome-header{
+
+.welcome-header {
   width: auto;
   align-self: center;
-  font-size: 40pt;
+  font-size: 4vw;
 }
-.welcome-text{
+
+.welcome-text {
+  margin-top:6vw;
   width: auto;
   align-self: center;
-  font-size: 20pt;
+  font-size: 2vw;
 }
-.welcome-navigate-next{
+
+.welcome-navigate-next {
+  margin-top: 6vw;
   width: auto;
   align-self: center;
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
-  font-size: 20pt;
+  font-size: 2vw;
   color: #1478b2;
 }
-.navigate-icon{
-  flex: 1;
+
+.navigate-icon {
+  width: 20%;
 }
-.navigate-text{
-  flex: 9;
+
+.navigate-text {
+  width: 80%
 }
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+

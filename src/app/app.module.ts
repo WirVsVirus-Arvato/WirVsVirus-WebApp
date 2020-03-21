@@ -17,6 +17,11 @@ import localeEn from '@angular/common/locales/en';
 import localeDe from '@angular/common/locales/de';
 import { registerLocaleData } from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
+import localeEn from '@angular/common/locales/en';
+import localeDe from '@angular/common/locales/de';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { QuestionnaireComponent } from './shared/questionnaire/questionnaire.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatRadioModule } from '@angular/material/radio';
@@ -44,6 +49,10 @@ registerLocaleData(localeDe, 'de-DE');
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
+    MatCardModule,
+    MatGridListModule,
+    MatDividerModule,
+    MatProgressBarModule,
     MatCardModule,
     MatSliderModule,
     MatRadioModule,

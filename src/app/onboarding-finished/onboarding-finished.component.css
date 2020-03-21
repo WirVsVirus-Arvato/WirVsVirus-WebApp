@@ -1,7 +1,6 @@
 * {
   line-height: 49px;
   text-align: center;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
   font-size: 25px;
 }
 
@@ -28,8 +27,8 @@ svg {
   left: 200px;
 }
 
-#onboarding-finished-message {
-  font-weight: 700;
+#onboarding-finished-info {
+  font-family: "Roboto-Bold", "Helvetica Neue", sans-serif;
   padding-top: 20%;
   padding-bottom: 40%;
 }

@@ -6,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./onboarding-finished.component.css']
 })
 export class OnboardingFinishedComponent implements OnInit {
-  userID = 'GB7-WC4';
+  userID: string;
 
-  constructor() { }
+  constructor() {
+    this.userID = 'GB7-WC4';
+  }
 
   ngOnInit(): void {
   }
