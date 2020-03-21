@@ -1,0 +1,22 @@
+.question-icon {
+  transform: scale(2);
+  margin: 1rem 0.5rem;
+}
+
+.mat-radio-group, .checkboxes {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.mat-slider, .mat-form-field {
+  width: 50%;
+}
+
+.spacer {
+  margin: auto;
+}
+
+.mat-card-actions {
+  display: flex;
+}

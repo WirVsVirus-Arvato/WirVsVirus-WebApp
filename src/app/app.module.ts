@@ -20,6 +20,11 @@ import localeEn from '@angular/common/locales/en';
 import localeDe from '@angular/common/locales/de';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { QuestionnaireComponent } from './shared/questionnaire/questionnaire.component';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
 
 registerLocaleData(localeEn, 'en-GB');
 registerLocaleData(localeDe, 'de-DE');
@@ -31,7 +36,8 @@ registerLocaleData(localeDe, 'de-DE');
     OnboardingFinishedComponent,
     LandingPageComponent,
     StatusTrackerComponent,
-    StatusQuestionnaireComponent
+    StatusQuestionnaireComponent,
+    QuestionnaireComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +51,11 @@ registerLocaleData(localeDe, 'de-DE');
     MatGridListModule,
     MatDividerModule,
     MatProgressBarModule,
+    MatCardModule,
+    MatSliderModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
