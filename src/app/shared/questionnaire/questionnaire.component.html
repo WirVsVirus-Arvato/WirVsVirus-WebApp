@@ -1,0 +1,65 @@
+<ng-container *ngIf="questions">
+
+
+  <ng-container *ngIf="questions[currentIndex] as question">
+    <mat-card >
+      <mat-card-header>
+        <div mat-card-avatar><mat-icon class="question-icon">help_outline</mat-icon></div>
+        <mat-card-title>
+          <h2>{{question.title}}</h2>
+        </mat-card-title>
+        <mat-card-subtitle>
+          Question {{currentIndex + 1}} of {{questions.length}}
+        </mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <ng-container [ngSwitch]="question.type">
+
+          <ng-container *ngSwitchCase="'a'">
+            <mat-slider min="1" max="10" step="1" value="1" thumbLabel tickInterval="1" #slider="matSlider"></mat-slider>
+            {{slider.value}}
+          </ng-container>
+
+          <ng-container *ngSwitchCase="'b'">
+            <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="1">Option 1</mat-radio-button>
+              <mat-radio-button value="2">Option 2</mat-radio-button>
+            </mat-radio-group>
+          </ng-container>
+
+          <ng-container *ngSwitchCase="'c'">
+            <div class="checkboxes">
+              <mat-checkbox>Option 1</mat-checkbox>
+              <mat-checkbox>Option 2</mat-checkbox>
+              <mat-checkbox>Option 3</mat-checkbox>
+            </div>
+          </ng-container>
+
+          <ng-container *ngSwitchCase="'d'">
+            <mat-form-field>
+              <mat-select placeholder="Select...">
+                <mat-option value="1">Option 1</mat-option>
+                <mat-option value="2">Option 2</mat-option>
+                <mat-option value="3">Option 3</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <br>
+          </ng-container>
+
+        </ng-container>
+      </mat-card-content>
+
+      <mat-card-actions align="end">
+        <button mat-stroked-button [disabled]="currentIndex <= 0" (click)="prev()">
+          <span i18n>Previous</span>
+        </button>
+        <button mat-stroked-button [disabled]="currentIndex >= (questions.length - 1)" (click)="next()">
+          <span i18n>Next</span>
+        </button>
+      </mat-card-actions>
+
+    </mat-card>
+
+  </ng-container>
+</ng-container>

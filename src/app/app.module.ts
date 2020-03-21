@@ -17,6 +17,11 @@ import localeEn from '@angular/common/locales/en';
 import localeDe from '@angular/common/locales/de';
 import { registerLocaleData } from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
+import { QuestionnaireComponent } from './shared/questionnaire/questionnaire.component';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
 
 registerLocaleData(localeEn, 'en-GB');
 registerLocaleData(localeDe, 'de-DE');
@@ -28,7 +33,8 @@ registerLocaleData(localeDe, 'de-DE');
     OnboardingFinishedComponent,
     LandingPageComponent,
     StatusTrackerComponent,
-    StatusQuestionnaireComponent
+    StatusQuestionnaireComponent,
+    QuestionnaireComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,11 @@ registerLocaleData(localeDe, 'de-DE');
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatSliderModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
