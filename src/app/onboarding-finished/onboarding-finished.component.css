@@ -19,6 +19,11 @@
   stroke: #646464;
   stroke-opacity: 0.9;
   border-width: 0.7px;
+  border-radius: 5px;
+}
+
+.copy {
+  cursor: pointer;
 }
 
 svg {

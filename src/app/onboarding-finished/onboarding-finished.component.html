@@ -2,10 +2,12 @@
 <p>Hier ist Ihre ID</p>
 <div class="container">
   <mat-card>{{userID}}
-    <svg width="150" height="20">
-      <rect x=120 class="rect-small"/>
-      <rect x=125 y=5 class="rect-small"/>
-    </svg>
+    <div class="copy" (click)="copyToClipboad(userID)">
+      <svg width="150" height="20">
+        <rect x=120 class="rect-small"/>
+        <rect x=125 y=5 class="rect-small"/>
+      </svg>
+    </div>
   </mat-card>
 </div>
 <div id="onboarding-finished-id" class="container">
