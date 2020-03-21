@@ -34,15 +34,15 @@ jobs:
         with:
           node-version: 12.x
           registry-url: https://npm.pkg.github.com/
-          scope: wirvsvirus
+          scope: '@wirvsvirus'
       - name: Install dependencies
         run: npm ci
       - name: Build
         run: npm run build -- --prod
-      - name: Publish
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      # - name: Publish
+      #   run: npm publish
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Build the docker image
         run: |
           docker login docker.pkg.github.com -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
