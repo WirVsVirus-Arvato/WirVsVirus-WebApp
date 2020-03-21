@@ -12,10 +12,10 @@
   <p>Wie geht es Ihnen heute?</p>
     <mat-grid-list cols="2" class="container-button-bar">
       <mat-grid-tile>
-        <button mat-raised-button color="good">Gut</button>
+        <button mat-raised-button color="good">GUT</button>
       </mat-grid-tile>
       <mat-grid-tile>
-        <button mat-raised-button color="warn">Schlecht</button>
+        <button mat-raised-button color="warn">SCHLECHT</button>
       </mat-grid-tile>
     </mat-grid-list>
   <a class="link">Detaillierte Diagnose starten ></a>
@@ -24,6 +24,9 @@
 <div class="status-check-container">
   <p class="city">In {{city}}</p>
   <p class="message danger" *ngIf="messageDanger">{{messageDanger}} ></p>
+
+  <mat-progress-bar mode="determinate" value="{{coronaStatus}}" style="height: 15px;"></mat-progress-bar>
+
   <mat-grid-list cols="6" class="container-button-bar">
     <mat-grid-tile>
       <button mat-stroked-button color="green">Alles super</button>

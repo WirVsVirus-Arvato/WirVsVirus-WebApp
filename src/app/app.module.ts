@@ -19,6 +19,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import localeEn from '@angular/common/locales/en';
 import localeDe from '@angular/common/locales/de';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 registerLocaleData(localeEn, 'en-GB');
 registerLocaleData(localeDe, 'de-DE');
@@ -43,6 +44,7 @@ registerLocaleData(localeDe, 'de-DE');
     MatCardModule,
     MatGridListModule,
     MatDividerModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
