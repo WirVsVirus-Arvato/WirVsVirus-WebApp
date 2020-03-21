@@ -1,11 +1,14 @@
 <div class="quarantine-status">
   <p class="quarantine-status-day">
     Tag {{quarantineDayActual}} von {{quarantineDayGoal}}
-    <svg width="25" height="50" *ngFor="let i of days(quarantineDayActual).fill(1)">
-      <ellipse cx="15" cy="40" rx="5px" ry="5px" style="fill:#B0C800;"/>
+    <svg width="25" height="50" *ngFor="let i of days(quarantineDayActual-1).fill(1)">
+      <ellipse cx="15" cy="40" rx="8" ry="8" style="fill:#B0C800;"/>
+    </svg>
+    <svg width="25" height="50">
+      <ellipse cx="15" cy="40" rx="8" ry="8" style="fill:transparent;stroke:#090909;stroke-width:2"/>
     </svg>
     <svg width="25" height="50" *ngFor="let i of days(quarantineDayGoal).fill(1)">
-      <ellipse cx="15" cy="40" rx="5px" ry="5px" style="fill:transparent;stroke:#D9D9D9;stroke-width:1"/>
+      <ellipse cx="15" cy="40" rx="8" ry="8" style="fill:transparent;stroke:#D9D9D9;stroke-width:1"/>
     </svg>
 </div>
 <div class="status-check-container">
