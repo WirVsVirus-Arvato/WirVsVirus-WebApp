@@ -7,8 +7,8 @@
       <button mat-menu-item routerLink="/onboarding">Onboarding</button>
       <button mat-menu-item routerLink="/onboarding-finished">Onboarding Finished</button>
       <button mat-menu-item routerLink="/statustracker">Status Tracker</button>
-      <button mat-menu-item routerLink="/status-good">Status Good</button>
-      <button mat-menu-item routerLink="/status-bad">Status Bad</button>
+      <button mat-menu-item [routerLink]="['/status', 'good']">Status Good</button>
+      <button mat-menu-item [routerLink]="['/status', 'bad']">Status Bad</button>
     </mat-menu>
     <button mat-icon-button [matMenuTriggerFor]="appMenu">
       <mat-icon>more_vert</mat-icon>

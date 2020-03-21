@@ -5,9 +5,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OnboardingComponent } from './onboarding/onboarding.component';
 import { OnboardingFinishedComponent } from './onboarding-finished/onboarding-finished.component';
-import { StatusTrackerComponent } from "./status-tracker/status-tracker.component";
-import { StatusGoodComponent } from './status-good/status-good.component';
-import { StatusNotGoodComponent } from './status-not-good/status-not-good.component';
+import { StatusTrackerComponent } from './status-tracker/status-tracker.component';
+import { StatusQuestionnaireComponent } from './status-questionnaire/status-questionnaire.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
@@ -26,8 +25,7 @@ registerLocaleData(localeDe, 'de-DE');
     OnboardingComponent,
     OnboardingFinishedComponent,
     StatusTrackerComponent,
-    StatusGoodComponent,
-    StatusNotGoodComponent
+    StatusQuestionnaireComponent
   ],
   imports: [
     BrowserModule,

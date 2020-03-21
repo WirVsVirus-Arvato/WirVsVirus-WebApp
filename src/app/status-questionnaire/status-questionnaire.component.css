@@ -1,0 +1,11 @@
+.btn-green {
+  border-width: 3px;
+  border-color: #b2c900;
+  color: #b2c900;
+}
+
+.btn-red {
+  border-width: 3px;
+  border-color: #ff0000;
+  color: #ff0000;
+}
