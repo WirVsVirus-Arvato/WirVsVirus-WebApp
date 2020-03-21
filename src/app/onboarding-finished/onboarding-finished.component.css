@@ -13,12 +13,17 @@
 }
 
 .rect-small {
-  width: 12.25px;
-  height: 12.25px;
+  width: 15px;
+  height: 15px;
   fill: transparent;
   stroke: #646464;
   stroke-opacity: 0.9;
   border-width: 0.7px;
+  border-radius: 5px;
+}
+
+.copy {
+  cursor: pointer;
 }
 
 svg {
@@ -30,5 +35,10 @@ svg {
 #onboarding-finished-info {
   font-family: "Roboto-Bold", "Helvetica Neue", sans-serif;
   padding-top: 20%;
-  padding-bottom: 40%;
+  padding-bottom: 30%;
+}
+
+#onboarding-finished-id {
+  padding-top: 5%;
+  padding-bottom: 5%;
 }

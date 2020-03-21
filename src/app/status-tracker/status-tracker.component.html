@@ -1,23 +1,33 @@
 <div class="quarantine-status">
-  <p class="quarantine-status-day">
-    Tag {{quarantineDayActual}} von {{quarantineDayGoal}}
-    <svg width="25" height="50" *ngFor="let i of days(quarantineDayActual).fill(1)">
-      <ellipse cx="15" cy="40" rx="5px" ry="5px" style="fill:#B0C800;"/>
-    </svg>
-    <svg width="25" height="50" *ngFor="let i of days(quarantineDayGoal).fill(1)">
-      <ellipse cx="15" cy="40" rx="5px" ry="5px" style="fill:transparent;stroke:#D9D9D9;stroke-width:1"/>
-    </svg>
+  <mat-grid-list cols="4" class="container-button-bar" rowHeight="40px">
+    <mat-grid-tile colspan="1">
+      <p class="quarantine-status-day">
+        Tag {{quarantineDayActual}} von {{quarantineDayGoal}}
+      </p>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" class="grid-align-left">
+      <svg width="25" height="50" *ngFor="let i of days(quarantineDayActual-1).fill(1)">
+        <ellipse cx="15" cy="17" rx="8" ry="8" style="fill:#B0C800;"></ellipse>
+      </svg>
+      <svg width="25" height="50">
+        <ellipse cx="15" cy="17" rx="8" ry="8" style="fill:transparent;stroke:#090909;stroke-width:2"></ellipse>
+      </svg>
+      <svg width="25" height="50" *ngFor="let i of days(quarantineDayGoal).fill(1)">
+        <ellipse cx="15" cy="17" rx="8" ry="8" style="fill:transparent;stroke:#D9D9D9;stroke-width:1"></ellipse>
+      </svg>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
 <div class="status-check-container">
   <p>Wie geht es Ihnen heute?</p>
-    <mat-grid-list cols="2" class="container-button-bar" rowHeight="200px">
-      <mat-grid-tile>
-        <button mat-raised-button color="good">GUT</button>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <button mat-raised-button color="warn">SCHLECHT</button>
-      </mat-grid-tile>
-    </mat-grid-list>
+  <mat-grid-list cols="2" class="container-button-bar" rowHeight="200px">
+    <mat-grid-tile>
+      <button mat-raised-button color="good">GUT</button>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <button mat-raised-button color="warn">SCHLECHT</button>
+    </mat-grid-tile>
+  </mat-grid-list>
   <a class="link">Detaillierte Diagnose starten ></a>
 </div>
 <mat-divider></mat-divider>
@@ -25,31 +35,33 @@
   <p class="city">In {{city}}</p>
   <p class="message danger" *ngIf="messageDanger">{{messageDanger}} ></p>
   <mat-progress-bar mode="determinate" value="{{coronaStatus}}" style="height: 15px;"></mat-progress-bar>
-  <mat-grid-list cols="6" class="container-button-bar" rowHeight="200px">
-    <mat-grid-tile>
-      <button mat-stroked-button color="green">Alles super</button>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <button mat-stroked-button color="red">Corona</button>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <button mat-stroked-button color="red">Besorgt</button>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <button mat-stroked-button color="red">Krank</button>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <button mat-stroked-button color="green">Fit</button>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <button mat-stroked-button color="green">Jogg</button>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <div hidden>
+    <mat-grid-list cols="6" class="container-button-bar" rowHeight="200px">
+      <mat-grid-tile>
+        <button mat-stroked-button color="green">Alles super</button>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <button mat-stroked-button color="red">Corona</button>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <button mat-stroked-button color="red">Besorgt</button>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <button mat-stroked-button color="red">Krank</button>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <button mat-stroked-button color="green">Fit</button>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <button mat-stroked-button color="green">Jogg</button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
 </div>
 <mat-divider></mat-divider>
 <div class="status-check-container">
   <p>Nützliche Tipps</p>
-  <mat-grid-list cols="6">
+  <mat-grid-list cols="6" rowHeight="100px">
     <mat-grid-tile>
       <p class="round tipp"></p>
     </mat-grid-tile>
@@ -71,6 +83,7 @@
   </mat-grid-list>
 </div>
 <div>
+  <div class="overflow: hidden">
   <mat-grid-list cols="2" rowHeight="100px">
     <mat-grid-tile>
       <a style="width: 100%;text-align: left; color: #0068A9;">Live Tracking</a>
@@ -79,4 +92,5 @@
       <a style="width: 100%;text-align: right; color: #0068A9;">Vernetzen</a>
     </mat-grid-tile>
   </mat-grid-list>
+  </div>
 </div>
