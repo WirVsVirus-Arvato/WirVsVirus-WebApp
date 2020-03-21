@@ -1,7 +1,7 @@
-<p id="onboarding-finished-info">Fertig!</p>
-<p>Hier ist Ihre ID</p>
+<p id="onboarding-finished-info" i18n>Done!</p>
+<p i18n>Here is your unique ID number:</p>
 <div class="container">
-  <mat-card>{{userID}}
+  <mat-card>{{userID$ | async}}
     <svg width="150" height="20">
       <rect x=120 class="rect-small"/>
       <rect x=125 y=5 class="rect-small"/>

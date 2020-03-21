@@ -5,7 +5,7 @@
     <mat-menu #appMenu="matMenu">
       <button mat-menu-item routerLink="/welcome">Welcome</button>
       <button mat-menu-item routerLink="/onboarding">Onboarding</button>
-      <button mat-menu-item routerLink="/onboarding-finished">Onboarding Finished</button>
+      <button mat-menu-item [routerLink]="['/token', '123456']">Token</button>
       <button mat-menu-item routerLink="/statustracker">Status Tracker</button>
       <button mat-menu-item [routerLink]="['/status', 'good']">Status Good</button>
       <button mat-menu-item [routerLink]="['/status', 'bad']">Status Bad</button>

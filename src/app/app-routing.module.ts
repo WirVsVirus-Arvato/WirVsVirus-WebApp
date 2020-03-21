@@ -10,7 +10,7 @@ import { StatusTrackerComponent } from './status-tracker/status-tracker.componen
 const appRoutes: Routes = [
   { path: 'welcome', component: LandingPageComponent },
   { path: 'onboarding', component: OnboardingComponent },
-  { path: 'onboarding-finished', component: OnboardingFinishedComponent },
+  { path: 'token/:token', component: OnboardingFinishedComponent },
   { path: 'statustracker', component: StatusTrackerComponent },
   { path: 'status/:status', component: StatusQuestionnaireComponent },
   { path: '**', component: LandingPageComponent }

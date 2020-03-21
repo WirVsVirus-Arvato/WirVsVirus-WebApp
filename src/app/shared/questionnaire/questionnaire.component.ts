@@ -26,10 +26,11 @@ export class QuestionnaireComponent implements OnInit {
   }
 
   canSubmit(): boolean {
-    return false;
+    return true;
   }
 
   submit() {
+    this.answers.emit([]);
   }
 
   next() {
