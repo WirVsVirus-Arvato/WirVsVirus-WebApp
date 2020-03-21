@@ -3,6 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OnboardingComponent } from './onboarding/onboarding.component';
+import { OnboardingFinishedComponent } from './onboarding-finished/onboarding-finished.component';
+import { StatusTrackerComponent } from "./status-tracker/status-tracker.component";
+import { StatusGoodComponent } from './status-good/status-good.component';
+import { StatusNotGoodComponent } from './status-not-good/status-not-good.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
@@ -11,7 +16,12 @@ import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OnboardingComponent,
+    OnboardingFinishedComponent,
+    StatusTrackerComponent,
+    StatusGoodComponent,
+    StatusNotGoodComponent
   ],
   imports: [
     BrowserModule,
