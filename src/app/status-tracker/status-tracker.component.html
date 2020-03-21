@@ -35,31 +35,33 @@
   <p class="city">In {{city}}</p>
   <p class="message danger" *ngIf="messageDanger">{{messageDanger}} ></p>
   <mat-progress-bar mode="determinate" value="{{coronaStatus}}" style="height: 15px;"></mat-progress-bar>
-  <mat-grid-list cols="6" class="container-button-bar" rowHeight="200px">
-    <mat-grid-tile>
-      <button mat-stroked-button color="green">Alles super</button>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <button mat-stroked-button color="red">Corona</button>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <button mat-stroked-button color="red">Besorgt</button>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <button mat-stroked-button color="red">Krank</button>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <button mat-stroked-button color="green">Fit</button>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <button mat-stroked-button color="green">Jogg</button>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <div hidden>
+    <mat-grid-list cols="6" class="container-button-bar" rowHeight="200px">
+      <mat-grid-tile>
+        <button mat-stroked-button color="green">Alles super</button>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <button mat-stroked-button color="red">Corona</button>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <button mat-stroked-button color="red">Besorgt</button>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <button mat-stroked-button color="red">Krank</button>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <button mat-stroked-button color="green">Fit</button>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <button mat-stroked-button color="green">Jogg</button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
 </div>
 <mat-divider></mat-divider>
 <div class="status-check-container">
   <p>Nützliche Tipps</p>
-  <mat-grid-list cols="6">
+  <mat-grid-list cols="6" rowHeight="100px">
     <mat-grid-tile>
       <p class="round tipp"></p>
     </mat-grid-tile>
@@ -81,6 +83,7 @@
   </mat-grid-list>
 </div>
 <div>
+  <div class="overflow: hidden">
   <mat-grid-list cols="2" rowHeight="100px">
     <mat-grid-tile>
       <a style="width: 100%;text-align: left; color: #0068A9;">Live Tracking</a>
@@ -89,4 +92,5 @@
       <a style="width: 100%;text-align: right; color: #0068A9;">Vernetzen</a>
     </mat-grid-tile>
   </mat-grid-list>
+  </div>
 </div>

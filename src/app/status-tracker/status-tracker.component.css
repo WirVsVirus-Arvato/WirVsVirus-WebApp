@@ -3,6 +3,19 @@
   font-size: 25px;
 }
 
+p {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+button {
+  width: 120px;
+  height: 40px;
+  font-size: 15px;
+  text-align: center;
+  margin: auto;
+}
+
 .status-tracker-container {
   display: flex;
   width: 100%;
@@ -17,16 +30,6 @@
   color: black;
   horiz-align: left;
   vertical-align: middle;
-}
-
-button {
-  width: 120px;
-  height: 40px;
-  font-size: 15px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .status-check-container {
