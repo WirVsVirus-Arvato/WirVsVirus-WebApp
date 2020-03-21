@@ -1,10 +1,7 @@
 <div class="landing-page-container">
-  <h1>Willkommen beim Quarantänehelfer.</h1>
-  <p>Hier erleichtern Ihnen die Kommunikation und Zusammenarbeit mit dem Gesundheitsamt.</p>
-  <div>
-
-  </div>
-  <button class="navigate-next" mat-button>
+  <h1 class="welcome-header">Willkommen beim Quarantänehelfer.</h1>
+  <p class="welcome-text">Hier erleichtern Ihnen die Kommunikation und Zusammenarbeit mit dem Gesundheitsamt.</p>
+  <button [routerLink]="['/onboarding']" class="welcome-navigate-next" mat-button>
     Bitte starten Sie zum Beginn unser Aufnahmeprotokoll
     <mat-icon class="navigate-icon">navigate_next</mat-icon>
   </button>
