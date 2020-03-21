@@ -12,3 +12,11 @@
 .mat-slider, .mat-form-field {
   width: 50%;
 }
+
+.spacer {
+  margin: auto;
+}
+
+.mat-card-actions {
+  display: flex;
+}

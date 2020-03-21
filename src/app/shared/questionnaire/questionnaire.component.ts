@@ -25,8 +25,11 @@ export class QuestionnaireComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(form: FormGroup) {
-    this.answers.emit(form.getRawValue());
+  canSubmit(): boolean {
+    return false;
+  }
+
+  submit() {
   }
 
   next() {

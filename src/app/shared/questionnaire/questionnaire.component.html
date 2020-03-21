@@ -50,12 +50,16 @@
         </ng-container>
       </mat-card-content>
 
-      <mat-card-actions align="end">
+      <mat-card-actions>
         <button mat-stroked-button [disabled]="currentIndex <= 0" (click)="prev()">
           <span i18n>Previous</span>
         </button>
         <button mat-stroked-button [disabled]="currentIndex >= (questions.length - 1)" (click)="next()">
           <span i18n>Next</span>
+        </button>
+        <span class="spacer"></span>
+        <button mat-stroked-button [disabled]="!canSubmit()" (click)="submit()">
+          <span i18n>Submit</span>
         </button>
       </mat-card-actions>
 
