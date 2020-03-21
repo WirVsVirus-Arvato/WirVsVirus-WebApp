@@ -13,10 +13,12 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import localeEn from '@angular/common/locales/en';
-import localeDe from '@angular/common/locales/de';
 import { registerLocaleData } from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
+import localeEn from '@angular/common/locales/en';
+import localeDe from '@angular/common/locales/de';
+import {MatDividerModule} from '@angular/material/divider';
 
 registerLocaleData(localeEn, 'en-GB');
 registerLocaleData(localeDe, 'de-DE');
@@ -38,7 +40,9 @@ registerLocaleData(localeDe, 'de-DE');
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatGridListModule,
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

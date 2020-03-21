@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "wirvsvirus-webapp"
+  "defaultProject": "wirvsvirus-webapp",
+  "cli": {
+    "analytics": false
+  }
 }
