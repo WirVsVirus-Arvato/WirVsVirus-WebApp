@@ -16,7 +16,7 @@ export class StatusTrackerComponent implements OnInit {
     this.quarantineDayActual = 4;
     this.quarantineDayGoal = 20;
     this.city = 'Hamburg';
-    this.messageDanger = 'Achtung: Aktull hohes Risiko!';
+    this.messageDanger = 'Achtung: Aktuell hohes Risiko!';
   }
 
   ngOnInit(): void {
