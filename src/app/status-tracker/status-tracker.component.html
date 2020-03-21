@@ -1,1 +1,81 @@
-
+<div class="quarantine-status">
+  <p class="quarantine-status-day">
+    Tag {{quarantineDayActual}} von {{quarantineDayGoal}}
+    <svg width="25" height="50" *ngFor="let i of days(quarantineDayActual).fill(1)">
+      <ellipse cx="15" cy="40" rx="8" ry="8" style="fill:#B0C800;"/>
+    </svg>
+    <svg width="25" height="50" *ngFor="let i of days(quarantineDayGoal).fill(1)">
+      <ellipse cx="15" cy="40" rx="8" ry="8" style="fill:transparent;stroke:#D9D9D9;stroke-width:1"/>
+    </svg>
+</div>
+<div class="status-check-container">
+  <p>Wie geht es Ihnen heute?</p>
+    <mat-grid-list cols="2" class="container-button-bar">
+      <mat-grid-tile>
+        <button mat-raised-button color="good">Gut</button>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <button mat-raised-button color="warn">Schlecht</button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  <a class="link">Detaillierte Diagnose starten ></a>
+</div>
+<mat-divider></mat-divider>
+<div class="status-check-container">
+  <p class="city">In {{city}}</p>
+  <p class="message danger" *ngIf="messageDanger">{{messageDanger}} ></p>
+  <mat-grid-list cols="6" class="container-button-bar">
+    <mat-grid-tile>
+      <button mat-stroked-button color="green">Alles super</button>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <button mat-stroked-button color="red">Corona</button>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <button mat-stroked-button color="red">Besorgt</button>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <button mat-stroked-button color="red">Krank</button>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <button mat-stroked-button color="green">Fit</button>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <button mat-stroked-button color="green">Jogg</button>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<mat-divider></mat-divider>
+<div class="status-check-container">
+  <p>Nützliche Tipps</p>
+  <mat-grid-list cols="6">
+    <mat-grid-tile>
+      <p class="round tipp"></p>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <p class="round tipp"></p>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <p class="round tipp"></p>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <p class="round tipp"></p>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <p class="round tipp"></p>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <p class="round tipp"></p>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<div class="status-check-container">
+  <mat-grid-list cols="2" class="container-button-bar">
+    <mat-grid-tile>
+      <a style="width: 100%;text-align: left; color: #0068A9;">Live Tracking</a>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <a style="width: 100%;text-align: right; color: #0068A9;">Vernetzen</a>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

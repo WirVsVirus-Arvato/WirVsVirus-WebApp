@@ -1,0 +1,50 @@
+name: Master Branch
+
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+
+  test:
+    name: Test - Units & Integrations
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up Node 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install dependencies
+        run: npm ci
+      - name: Test
+        run: npm run test-headless
+
+  artifact:
+    name: Publish - GitHub Packages
+    runs-on: ubuntu-18.04
+    needs: [test]
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up Node 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+          registry-url: https://npm.pkg.github.com/
+          scope: '@wirvsvirus'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build -- --prod
+      - name: Publish
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Build the docker image
+        run: |
+          docker login docker.pkg.github.com -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
+          docker build . --file Dockerfile --tag docker.pkg.github.com/wirvsvirus-arvato/wirvsvirus-webapp/webapp:latest --tag docker.pkg.github.com/wirvsvirus-arvato/wirvsvirus-webapp/webapp:$(date +%s)
+          docker push docker.pkg.github.com/wirvsvirus-arvato/wirvsvirus-webapp/webapp
