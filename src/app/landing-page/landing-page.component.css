@@ -1,0 +1,17 @@
+.landing-page-container{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-content: center;
+}
+.navigate-next{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+.navigate-icon{
+  flex: 1;
+}
+.navigate-text{
+  flex: 9;
+}
