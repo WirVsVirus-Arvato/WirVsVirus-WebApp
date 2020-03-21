@@ -33,10 +33,7 @@ svg {
   padding-bottom: 30%;
 }
 
-.link {
-  font-size: 20px;
-  color: #0068A9;
-  padding: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
+#onboarding-finished-id {
+  padding-top: 5%;
+  padding-bottom: 5%;
 }

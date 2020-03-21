@@ -12,3 +12,15 @@ body { margin: 0; font-family: Roboto-Regular, "Helvetica Neue", sans-serif; }
   justify-content: center;
   align-content: center;
 }
+
+.link {
+  cursor: pointer;
+  outline:none;
+  font-size: 20px;
+  color: #0068A9;
+  padding: auto;
+  margin-top: 30px !important;
+  margin-bottom: 30px;
+  width: fit-content;
+  max-width: 350px;
+}
