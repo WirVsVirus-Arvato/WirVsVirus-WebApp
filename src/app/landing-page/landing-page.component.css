@@ -5,30 +5,29 @@
   flex-flow: column;
   align-content: space-around;
   justify-content: space-around;
+  font-size: 1.2em;
+  text-align: center;
 }
 
 .welcome-header {
   width: auto;
-  align-self: center;
-  font-size: 4vw;
+  font-weight: 500;
 }
 
 .welcome-text {
-  margin-top:6vw;
+  margin-top: 3em;
   width: auto;
-  align-self: center;
-  font-size: 2vw;
 }
 
 .welcome-navigate-next {
-  margin-top: 6vw;
+  margin-top: 3em;
   width: auto;
-  align-self: center;
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
-  font-size: 2vw;
   color: #1478b2;
+  white-space: normal;
+  line-height: 1em;
 }
 
 .navigate-icon {
