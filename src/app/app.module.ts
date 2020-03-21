@@ -16,6 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
 import localeEn from '@angular/common/locales/en';
 import localeDe from '@angular/common/locales/de';
 import { registerLocaleData } from '@angular/common';
+import {MatCardModule} from '@angular/material/card';
 
 registerLocaleData(localeEn, 'en-GB');
 registerLocaleData(localeDe, 'de-DE');
@@ -36,7 +37,8 @@ registerLocaleData(localeDe, 'de-DE');
     MatMenuModule,
     MatIconModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

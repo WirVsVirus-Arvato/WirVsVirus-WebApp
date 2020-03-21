@@ -1,0 +1,35 @@
+* {
+  line-height: 49px;
+  text-align: center;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 25px;
+}
+
+.mat-card {
+  width: 335px;
+  height: 49px;
+  color: #646464;
+  background: #F5F5F5;
+  box-shadow: none;
+}
+
+.rect-small {
+  width: 12.25px;
+  height: 12.25px;
+  fill: transparent;
+  stroke: #646464;
+  stroke-opacity: 0.9;
+  border-width: 0.7px;
+}
+
+svg {
+  position: absolute;
+  top: 30px;
+  left: 200px;
+}
+
+#onboarding-finished-message {
+  font-weight: 700;
+  padding-top: 20%;
+  padding-bottom: 40%;
+}

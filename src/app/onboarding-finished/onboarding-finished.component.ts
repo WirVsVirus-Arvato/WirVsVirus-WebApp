@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./onboarding-finished.component.css']
 })
 export class OnboardingFinishedComponent implements OnInit {
+  userID = 'GB7-WC4';
 
   constructor() { }
 
