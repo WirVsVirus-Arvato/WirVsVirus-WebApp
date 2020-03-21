@@ -80,3 +80,15 @@ button {
 .container-button-bar {
   height: 50px;
 }
+p.round {
+  border: 1px solid #BCBCBC;
+  border-radius: 5px;
+}
+p.tipp {
+  width: 100px;
+  height: 60px;
+}
+
+.mat-grid-tile{
+  padding: 0;
+}
