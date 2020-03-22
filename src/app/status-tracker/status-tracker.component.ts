@@ -12,7 +12,7 @@ export class StatusTrackerComponent implements OnInit {
   messageDanger: string;
   days = Array;
   coronaStatus: number;
-  coronaLocationDetails: any;
+  coronaStatusDetails: any;
 
   constructor() {
     this.quarantineDayActual = 4;

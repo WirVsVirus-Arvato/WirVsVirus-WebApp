@@ -13,16 +13,21 @@
   </svg>
 </div>
 <div class="status-check-container">
-  <p>Wie geht es Ihnen heute?</p>
-  <mat-grid-list cols="2" class="container-button-bar" rowHeight="100px" style="overflow: hidden;">
-    <mat-grid-tile>
+  <div id="status-check-done" *ngIf="coronaStatusDetails">
+    <p>Status heute bereits versendet!</p>
+    <div class="container">
+      <img src="../../assets/img/status-done-happy@3x.png" alt="happy-face" style="width: 40px; height: 40px">
+    </div>
+    <div class="container"><a class="link link-small">Meine Eingaben prüfen ></a></div>
+  </div>
+  <div id="status-check-to-do" *ngIf="!coronaStatusDetails">
+    <p>Wie geht es Ihnen heute?</p>
+    <div class="container-button-bar" style="overflow: hidden;">
       <button mat-raised-button color="good" routerLink="/status/good">GUT</button>
-    </mat-grid-tile>
-    <mat-grid-tile>
       <button mat-raised-button color="bad" routerLink="/status/bad">SCHLECHT</button>
-    </mat-grid-tile>
-  </mat-grid-list>
-  <div class="container"><a class="link link-small">Detaillierte Diagnose starten ></a></div>
+    </div>
+    <div class="container"><a class="link link-small">Detaillierte Diagnose starten ></a></div>
+  </div>
 </div>
 <mat-divider></mat-divider>
 <div class="status-check-container">
