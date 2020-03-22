@@ -21,10 +21,9 @@
             {{slider.value}}
           </ng-container>
 
-          <ng-container *ngSwitchCase="'b'">
-            <mat-radio-group aria-label="Select an option">
-              <mat-radio-button value="1">Option 1</mat-radio-button>
-              <mat-radio-button value="2">Option 2</mat-radio-button>
+          <ng-container *ngSwitchCase="'SINGLECHOICE'">
+            <mat-radio-group aria-label="Select an option" (change)="radioChoiceAnswer($event)">
+              <mat-radio-button *ngFor="let choice of question.choices" [value]="choice.id">{{choice.answer}}</mat-radio-button>
             </mat-radio-group>
           </ng-container>
 
@@ -38,12 +37,10 @@
             </div>
           </ng-container>
 
-          <ng-container *ngSwitchCase="'d'">
+          <ng-container *ngSwitchCase="'c'">
             <mat-form-field>
               <mat-select placeholder="Select...">
-                <mat-option value="1">Option 1</mat-option>
-                <mat-option value="2">Option 2</mat-option>
-                <mat-option value="3">Option 3</mat-option>
+                <mat-option *ngFor="let choice of question.choices" value="1">{{choice.answer}}</mat-option>
               </mat-select>
             </mat-form-field>
             <br>
