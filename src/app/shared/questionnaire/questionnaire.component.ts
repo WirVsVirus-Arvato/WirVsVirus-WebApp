@@ -57,13 +57,13 @@ export class QuestionnaireComponent implements OnInit {
       question.answer = undefined;
     } else {
       const choiceIds = $event.source.selectedOptions.selected.map(s => s.value);
-      question.answer = new Answer(question.id, '', JSON.stringify(choiceIds));
+      question.answer = new Answer(question.id, '', choiceIds);
     }
   }
 
   radioChoiceAnswer($event: MatRadioChange) {
     const question = this.getCurrentQuestion();
     const choice = $event.value;
-    question.answer = new Answer(question.id, '', choice);
+    question.answer = new Answer(question.id, '', [choice]);
   }
 }

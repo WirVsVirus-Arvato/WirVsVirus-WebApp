@@ -23,14 +23,14 @@
 
           <ng-container *ngSwitchCase="'SINGLECHOICE'">
             <mat-radio-group aria-label="Select an option" (change)="radioChoiceAnswer($event)">
-              <mat-radio-button *ngFor="let choice of question.choices" [value]="choice.id">{{choice.answer}}</mat-radio-button>
+              <mat-radio-button [checked]="!!getCurrentQuestion().answer && getCurrentQuestion().answer.content.includes(choice.id)" *ngFor="let choice of question.choices" [value]="choice.id">{{choice.answer}}</mat-radio-button>
             </mat-radio-group>
           </ng-container>
 
           <ng-container *ngSwitchCase="'MULTIPLECHOICE'">
             <div class="checkboxes">
               <mat-selection-list (selectionChange)="multipleChoiceAnswer($event)">
-                <mat-list-option *ngFor="let choice of question.choices" [value]="choice.id">
+                <mat-list-option *ngFor="let choice of question.choices" [value]="choice.id" [selected]="!!getCurrentQuestion().answer && getCurrentQuestion().answer.content.includes(choice.id)">
                   {{choice.answer}}
                 </mat-list-option>
               </mat-selection-list>
@@ -53,7 +53,7 @@
         <button mat-stroked-button [disabled]="currentIndex <= 0" (click)="prev()">
           <span i18n>Previous</span>
         </button>
-        <button mat-stroked-button [disabled]="currentIndex >= (questionnaire.questions.length - 1)" (click)="next()">
+        <button mat-stroked-button [disabled]="getCurrentQuestion().answer === undefined || (currentIndex >= (questionnaire.questions.length - 1))" (click)="next()">
           <span i18n>Next</span>
         </button>
         <span class="spacer"></span>
