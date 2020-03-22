@@ -23,8 +23,12 @@ button {
   flex-flow: column;
   justify-content: space-around;
 }
+.quarantine-status {
+  line-height: 0;
+}
 
 .quarantine-status-day {
+  margin: 0;
   font-size: 14px;
   font-family: Roboto-Regular, "Helvetica Neue", sans-serif;
   color: black;
