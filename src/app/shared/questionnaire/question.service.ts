@@ -35,16 +35,12 @@ export class QuestionService {
       );
   }
 
-  async sendAnswers(answers: Answer[]) {
-    for (const answer of answers) {
-
-      const answerDTO = {
-        questionId: answer.questionId,
-        token: answer.token,
-        content: answer.content.join(',')
-      };
-
-      await this.http.post(`${environment.apiUrl}/answer`, answerDTO).toPromise();
-    }
+  sendAnswers(answers: Answer[]) {
+    const answerDTOs = answers.map(answer => ({
+      questionId: answer.questionId,
+      token: answer.token,
+      content: answer.content.join(',')
+    }));
+    this.http.post(`${environment.apiUrl}/answer`, answerDTOs);
   }
 }
