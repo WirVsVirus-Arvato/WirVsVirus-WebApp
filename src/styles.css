@@ -1,11 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto-Regular, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
 
-@font-face { font-family: 'Roboto-Bold'; src: url("./assets/fonts/Roboto-Bold.ttf"); }
-@font-face { font-family: 'Roboto-Light'; src: url("./assets/fonts/Roboto-Light.ttf"); }
-@font-face { font-family: 'Roboto-Regular'; src: url("./assets/fonts/Roboto-Regular.ttf"); }
+body {
+  margin: 0;
+  font-family: Roboto-Regular, "Helvetica Neue", sans-serif;
+}
+
+@font-face {
+  font-family: 'Roboto-Bold';
+  src: url("./assets/fonts/Roboto-Bold.ttf");
+}
+
+@font-face {
+  font-family: 'Roboto-Light';
+  src: url("./assets/fonts/Roboto-Light.ttf");
+}
+
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url("./assets/fonts/Roboto-Regular.ttf");
+}
 
 .container {
   display: flex;
@@ -15,7 +32,7 @@ body { margin: 0; font-family: Roboto-Regular, "Helvetica Neue", sans-serif; }
 
 .link {
   cursor: pointer;
-  outline:none;
+  outline: none;
   font-size: 20px;
   color: #0068A9;
   padding: auto;
@@ -27,4 +44,13 @@ body { margin: 0; font-family: Roboto-Regular, "Helvetica Neue", sans-serif; }
 
 .link-small {
   font-size: 12px !important;
+}
+
+.hide-scroll-bar {
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+
+.hide-scroll-bar::-webkit-scrollbar {
+  width: 0 !important
 }

@@ -31,7 +31,7 @@
     <p class="message danger" *ngIf="messageDanger">{{messageDanger}} ></p>
     <mat-progress-bar mode="determinate" value="{{coronaStatus}}" style="height: 15px;"></mat-progress-bar>
   </div>
-  <div class="container-button-bar">
+  <div class="container-button-bar hide-scroll-bar">
     <button mat-stroked-button color="green" class="container-button-icon">Alles super</button>
     <button mat-stroked-button color="red" class="container-button-icon">Corona</button>
     <button mat-stroked-button color="red" class="container-button-icon">Besorgt</button>
@@ -42,7 +42,7 @@
 <mat-divider></mat-divider>
 <div class="tip-container">
   <p>Nützliche Tipps</p>
-  <div class="tip-list">
+  <div class="tip-list hide-scroll-bar">
     <img class="tip-image link" src="../../assets/img/undraw_medicine_b1ol.svg" alt="medicine">
     <img class="tip-image link" src="../../assets/img/undraw_private_data_7q35.svg" alt="private-data">
     <img class="tip-image link" src="../../assets/img/undraw_secure_data_0rwp.svg" alt="data-secure">
