@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { TokenService } from '../shared/token.service';
 import { QuestionService } from '../shared/questionnaire/question.service';
 import { Questionnaire } from '../shared/questionnaire/questionnaire.model';
+import { Answer } from '../shared/questionnaire/answer.model';
 
 @Component({
   selector: 'app-onboarding',
@@ -24,8 +25,10 @@ export class OnboardingComponent implements OnInit {
     });
   }
 
-  submitAnswers(event) {
-    this.tokenSrv.obtainAndPersistToken().subscribe(token => {
+  submitAnswers(answers: Answer[]) {
+    this.tokenSrv.obtainAndPersistToken().subscribe(async token => {
+      answers.forEach(answer => answer.token = token.token);
+      await this.questionSrv.sendAnswers(answers);
       this.gotoFinish(token.token);
     });
   }
