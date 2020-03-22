@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { Question } from './question.model';
+import { Questionnaire } from './questionnaire.model';
+import { MatSelectionListChange } from '@angular/material/list';
+import { Answer } from './answer.model';
+import { TokenService } from '../token.service';
 
 @Component({
   selector: 'app-questionnaire',
@@ -9,32 +11,34 @@ import { Question } from './question.model';
 })
 export class QuestionnaireComponent implements OnInit {
 
-  @Input() questions: Question[] = [
-    new Question(1, 'a', 'Blablub 1'),
-    new Question(2, 'b', 'Blablub 2'),
-    new Question(3, 'c', 'Blablub 3'),
-    new Question(3, 'd', 'Blablub 4'),
-  ];
+  @Input() questionnaire: Questionnaire;
   @Output() answers: EventEmitter<any[]> = new EventEmitter<any[]>();
 
   currentIndex = 0;
+  token: string = undefined;
 
-  constructor() {
+  constructor(private tokenSrv: TokenService) {
   }
 
   ngOnInit(): void {
+    this.token = this.tokenSrv.getCurrentToken();
+  }
+
+  getCurrentQuestion() {
+    return this.questionnaire.questions[this.currentIndex];
   }
 
   canSubmit(): boolean {
-    return true;
+    return this.questionnaire.questions.every(q => q.answer !== undefined);
   }
 
   submit() {
-    this.answers.emit([]);
+    const answers = this.questionnaire.questions.map(q => q.answer);
+    this.answers.emit(answers);
   }
 
   next() {
-    if (this.currentIndex < this.questions.length - 1) {
+    if (this.currentIndex < this.questionnaire.questions.length - 1) {
       this.currentIndex++;
     }
   }
@@ -42,6 +46,17 @@ export class QuestionnaireComponent implements OnInit {
   prev() {
     if (this.currentIndex > 0) {
       this.currentIndex--;
+    }
+  }
+
+  multipleChoiceAnswer($event: MatSelectionListChange) {
+    const question = this.getCurrentQuestion();
+
+    if ($event.source.selectedOptions.selected.length < 1) {
+      question.answer = undefined;
+    } else {
+      const choiceIds = $event.source.selectedOptions.selected.map(s => s.value);
+      question.answer = new Answer(question.id, '', JSON.stringify(choiceIds));
     }
   }
 }

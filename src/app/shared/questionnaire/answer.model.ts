@@ -1,12 +1,12 @@
 export class Answer {
 
   questionId: number;
-  peopleId: number;
+  token: string;
   content: string;
 
-  constructor(questionId: number, peopleId: number, content: string) {
+  constructor(questionId: number, token: string, content: string) {
     this.questionId = questionId;
-    this.peopleId = peopleId;
+    this.token = token;
     this.content = content;
   }
 }
