@@ -24,3 +24,7 @@ body { margin: 0; font-family: Roboto-Regular, "Helvetica Neue", sans-serif; }
   width: fit-content;
   max-width: 350px;
 }
+
+.link-small {
+  font-size: 12px !important;
+}
