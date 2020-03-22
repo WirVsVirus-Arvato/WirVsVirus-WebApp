@@ -18,7 +18,8 @@ export class OnboardingComponent implements OnInit {
 
   submitAnswers(event) {
     this.http.post(`${environment.apiUrl}/people`, {}).subscribe(token => {
-      this.router.navigate(['token', token]);
+      localStorage.setItem("token", token['token']);
+      this.router.navigate(['token', token['token']]);
     });
   }
 
