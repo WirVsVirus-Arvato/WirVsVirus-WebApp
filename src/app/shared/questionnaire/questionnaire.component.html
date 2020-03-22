@@ -1,7 +1,7 @@
-<ng-container *ngIf="questions">
+<ng-container *ngIf="questionnaire">
 
 
-  <ng-container *ngIf="questions[currentIndex] as question">
+  <ng-container *ngIf="questionnaire.questions[currentIndex] as question">
     <mat-card >
       <mat-card-header>
         <div mat-card-avatar><mat-icon class="question-icon">help_outline</mat-icon></div>
@@ -9,7 +9,7 @@
           <h2>{{question.title}}</h2>
         </mat-card-title>
         <mat-card-subtitle>
-          Question {{currentIndex + 1}} of {{questions.length}}
+          Question {{currentIndex + 1}} of {{questionnaire.questions.length}}
         </mat-card-subtitle>
       </mat-card-header>
 
@@ -28,11 +28,13 @@
             </mat-radio-group>
           </ng-container>
 
-          <ng-container *ngSwitchCase="'c'">
+          <ng-container *ngSwitchCase="'MULTIPLECHOICE'">
             <div class="checkboxes">
-              <mat-checkbox>Option 1</mat-checkbox>
-              <mat-checkbox>Option 2</mat-checkbox>
-              <mat-checkbox>Option 3</mat-checkbox>
+              <mat-selection-list (selectionChange)="multipleChoiceAnswer($event)">
+                <mat-list-option *ngFor="let choice of question.choices" [value]="choice.id">
+                  {{choice.answer}}
+                </mat-list-option>
+              </mat-selection-list>
             </div>
           </ng-container>
 
@@ -54,7 +56,7 @@
         <button mat-stroked-button [disabled]="currentIndex <= 0" (click)="prev()">
           <span i18n>Previous</span>
         </button>
-        <button mat-stroked-button [disabled]="currentIndex >= (questions.length - 1)" (click)="next()">
+        <button mat-stroked-button [disabled]="currentIndex >= (questionnaire.questions.length - 1)" (click)="next()">
           <span i18n>Next</span>
         </button>
         <span class="spacer"></span>

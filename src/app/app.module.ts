@@ -28,6 +28,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { MatListModule } from '@angular/material/list';
 
 registerLocaleData(localeEn, 'en-GB');
 registerLocaleData(localeDe, 'de-DE');
@@ -61,7 +62,8 @@ registerLocaleData(localeDe, 'de-DE');
     MatCheckboxModule,
     MatSelectModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

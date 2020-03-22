@@ -1,7 +1,7 @@
 <h1 i18n>Onboarding Questionnaire</h1>
 
 <ng-container *ngIf="!currentToken; else alreadyRegistered">
-  <app-questionnaire (answers)="submitAnswers($event)"></app-questionnaire>
+  <app-questionnaire (answers)="submitAnswers($event)" [questionnaire]="questionnaire"></app-questionnaire>
 </ng-container>
 
 <ng-template #alreadyRegistered>
