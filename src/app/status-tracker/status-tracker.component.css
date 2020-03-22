@@ -18,7 +18,7 @@ button {
 
 .tip-container {
   display: flex;
-  height: 250px;
+  height: 200px;
   flex-flow: column;
   justify-content: space-around;
 }
@@ -31,15 +31,15 @@ button {
   -webkit-overflow-scrolling: touch;
   white-space: nowrap;
   overflow-x: scroll;
+  overflow-y: hidden;
   display: inline-block;
 }
 
 .tip-image {
   flex: 1 0;
-  margin-left: 1rem;
-  margin-bottom: 1rem;
   max-height: 100px;
   width: 100px;
+  margin: 0 10px !important;
 }
 
 
