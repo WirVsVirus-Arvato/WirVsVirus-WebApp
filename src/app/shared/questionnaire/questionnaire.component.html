@@ -30,7 +30,7 @@
           <ng-container *ngSwitchCase="'MULTIPLECHOICE'">
             <div class="checkboxes">
               <mat-selection-list (selectionChange)="multipleChoiceAnswer($event)">
-                <mat-list-option *ngFor="let choice of question.choices" [value]="choice.id" [selected]="!!getCurrentQuestion().answer && getCurrentQuestion().answer.content.includes(choice.id)">
+                <mat-list-option checkboxPosition="before" *ngFor="let choice of question.choices" [value]="choice.id" [selected]="!!getCurrentQuestion().answer && getCurrentQuestion().answer.content.includes(choice.id)">
                   {{choice.answer}}
                 </mat-list-option>
               </mat-selection-list>
