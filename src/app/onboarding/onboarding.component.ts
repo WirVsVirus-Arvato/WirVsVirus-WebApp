@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { environment } from '../../environments/environment';
 import { Router } from '@angular/router';
+import { TokenService } from '../shared/token.service';
 
 @Component({
   selector: 'app-onboarding',
@@ -10,16 +9,22 @@ import { Router } from '@angular/router';
 })
 export class OnboardingComponent implements OnInit {
 
-  constructor(private http: HttpClient, private router: Router) {
+  currentToken = undefined;
+
+  constructor(private tokenSrv: TokenService, private router: Router) {
   }
 
   ngOnInit(): void {
+    this.currentToken = this.tokenSrv.getCurrentToken();
   }
 
   submitAnswers(event) {
-    this.http.post(`${environment.apiUrl}/people`, {}).subscribe(token => {
-      this.router.navigate(['token', token['token']]);
+    this.tokenSrv.obtainAndPersistToken().subscribe(token => {
+      this.gotoFinish(token.token);
     });
   }
 
+  gotoFinish(token: string) {
+    this.router.navigate(['token', token]);
+  }
 }

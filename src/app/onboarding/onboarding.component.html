@@ -1,3 +1,12 @@
 <h1 i18n>Onboarding Questionnaire</h1>
 
-<app-questionnaire (answers)="submitAnswers($event)"></app-questionnaire>
+
+
+<ng-container *ngIf="!currentToken; else asd">
+  <app-questionnaire (answers)="submitAnswers($event)"></app-questionnaire>
+</ng-container>
+
+<ng-template #asd>
+  <h3>You are already registered!</h3>
+  <button mat-stroked-button (click)="gotoFinish(currentToken)">Continue</button>
+</ng-template>

@@ -17,7 +17,6 @@ export class OnboardingFinishedComponent implements OnInit {
   ngOnInit(): void {
     this.userID$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) => {
-        localStorage.setItem("token", params.get('token'));
         return of((params.get('token')));
       })
     );
