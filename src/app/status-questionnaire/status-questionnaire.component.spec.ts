@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StatusQuestionnaireComponent } from './status-questionnaire.component';
 import { RouterTestingModule } from "@angular/router/testing";
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('StatusQuestionnaireComponent', () => {
   let component: StatusQuestionnaireComponent;
@@ -11,7 +12,8 @@ describe('StatusQuestionnaireComponent', () => {
     TestBed.configureTestingModule({
       declarations: [StatusQuestionnaireComponent ],
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        HttpClientTestingModule
       ]
     })
     .compileComponents();
