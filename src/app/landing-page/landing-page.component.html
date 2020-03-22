@@ -1,10 +1,36 @@
 <div class="landing-page-container">
   <div>
-    <div class="welcome-header">Willkommen beim Quarantänehelfer</div>
-    <div class="welcome-text">Hier erleichtern Ihnen die Kommunikation und Zusammenarbeit mit dem Gesundheitsamt</div>
-    <a [routerLink]="['/onboarding']" class="welcome-navigate-next" mat-button>
-      Bitte starten Sie zum Beginn unser Aufnahmeprotokoll
-      <mat-icon class="navigate-icon">navigate_next</mat-icon>
-    </a>
+    <div class="welcome-header" i18n>Welcome to Quarantine Companion</div>
+
+    <div style="margin-top: 5rem">
+      <img style="width:20rem" class="logo" src="../assets/undraw_medicine_b1ol.svg">
+    </div>
+
+    <div class="welcome-text" i18n>Our aim is to make communication and cooperation with the health authorities easier for you.</div>
+
+    <div style="margin-top: 3rem" *ngIf="!currentToken; else login">
+      <a [routerLink]="['/onboarding']" class="btn-card" mat-button>
+        <mat-card class="nav-card">
+          <img mat-card-image style="width:9rem; margin-top:1rem;" class="logo" src="../assets/undraw_secure_data_0rwp.svg">
+          <div class="nav-card-content">
+            <span i18n>Are you new here? Please proceed with the onboarding questionnaire</span>
+          </div>
+        </mat-card>
+      </a>
+    </div>
+
+    <ng-template #login>
+      <div style="margin-top: 3rem">
+        <a [routerLink]="['/statustracker']" class="btn-card" mat-button>
+          <mat-card class="nav-card">
+            <img mat-card-image style="width:9rem; margin-top:1rem;" class="logo" src="../assets/undraw_private_data_7q35.svg">
+            <div class="nav-card-content">
+              <span i18n>Track your daily health status</span>
+            </div>
+          </mat-card>
+        </a>
+      </div>
+    </ng-template>
+
   </div>
 </div>

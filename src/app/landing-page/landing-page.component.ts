@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenService } from '../shared/token.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-landing-page',
@@ -7,12 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor() { }
+  currentToken: string = undefined;
+
+  constructor(private tokenSrv: TokenService) { }
 
   ngOnInit(): void {
-  }
-
-  navigateNext() {
-
+    this.currentToken = this.tokenSrv.getCurrentToken();
   }
 }
