@@ -28,3 +28,16 @@
 .mat-card-actions {
   display: flex;
 }
+
+.answer-content {
+  min-height: 10rem;
+}
+
+.btn-submit {
+  background-color: #f7bb3d;
+  color: #ffffff;
+}
+
+.btn-submit[disabled] {
+  background-color: transparent;
+}

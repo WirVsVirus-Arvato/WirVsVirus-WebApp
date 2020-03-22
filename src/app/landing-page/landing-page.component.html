@@ -13,7 +13,7 @@
     <br>
     <mat-divider></mat-divider>
 
-    <div style="margin: 1rem 0" class="nav-link">
+    <div style="margin: 1rem 0" class="nav-link"  *ngIf="!currentToken">
       <a [routerLink]="['/onboarding']" class="btn-content">
         <span i18n>Bitte starten Sie zum Beginn unser Aufnahmeprotokoll.</span>
       </a>
@@ -22,9 +22,9 @@
 
     <mat-divider></mat-divider>
 
-    <div style="margin: 1rem 0" class="nav-link">
+    <div style="margin: 1rem 0" class="nav-link" *ngIf="currentToken">
       <a [routerLink]="['/statustracker']" class="btn-content">
-        <span i18n>Ich habe schon eine ID</span>
+        <span i18n>Gesundheitszustand verfolgen</span>
       </a>
       <mat-icon class="navigate-icon" style="color: #1073b2">navigate_next</mat-icon>
     </div>

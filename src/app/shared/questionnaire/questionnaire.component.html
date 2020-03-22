@@ -13,7 +13,7 @@
         </mat-card-subtitle>
       </mat-card-header>
 
-      <mat-card-content>
+      <mat-card-content class="answer-content">
         <ng-container [ngSwitch]="question.type">
 
           <ng-container *ngSwitchCase="'a'">
@@ -50,15 +50,15 @@
       </mat-card-content>
 
       <mat-card-actions>
+        <button mat-stroked-button [disabled]="!canSubmit()" (click)="submit()" class="btn-submit">
+          <span i18n>Absenden</span>
+        </button>
+        <span class="spacer"></span>
         <button mat-stroked-button [disabled]="currentIndex <= 0" (click)="prev()">
           <span i18n>Zurück</span>
         </button>
         <button mat-stroked-button [disabled]="getCurrentQuestion().answer === undefined || (currentIndex >= (questionnaire.questions.length - 1))" (click)="next()">
           <span i18n>Weiter</span>
-        </button>
-        <span class="spacer"></span>
-        <button mat-stroked-button [disabled]="!canSubmit()" (click)="submit()" color="primary">
-          <span i18n>Absenden</span>
         </button>
       </mat-card-actions>
 
