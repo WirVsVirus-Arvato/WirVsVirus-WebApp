@@ -4,8 +4,8 @@
 }
 
 p {
-  margin-top: 30px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 button {
@@ -13,7 +13,7 @@ button {
   height: 40px;
   font-size: 15px;
   text-align: center;
-  margin: auto;
+  margin: 10px auto;
 }
 
 .status-tracker-container {
@@ -69,6 +69,13 @@ button {
   border-color: #B0C800;
   color: #B0C800;
   font-size: 15px;
+}
+
+.mat-blue {
+  background-color: #0068A9;
+  color: white;
+  font-size: 15px;
+  width: auto;
 }
 
 .message {
