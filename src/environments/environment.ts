@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  //apiUrl: 'http://localhost:8080/api'
-  apiUrl: 'http://94.130.175.202:8091/api'
+  apiUrl: 'http://service.qh.jens-koehler.net:80/api'
 };
 
 /*
