@@ -9,7 +9,7 @@ p {
 }
 
 button {
-  width: 120px;
+  width: 100px;
   height: 40px;
   font-size: 12px;
   text-align: center;
@@ -120,7 +120,18 @@ button {
 }
 
 .container-button-bar {
-  height: 50px;
+  width: auto;
+  flex-flow: row wrap;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: inline-block;
+}
+
+.container-button-icon {
+  flex: 1 0;
+  margin: 10px 5px 10px 10px;
 }
 
 .mat-grid-tile{
