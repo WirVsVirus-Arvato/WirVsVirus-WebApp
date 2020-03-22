@@ -13,7 +13,10 @@ button {
   height: 40px;
   font-size: 12px;
   text-align: center;
-  margin: 10px auto;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .tip-container {
@@ -120,7 +123,7 @@ button {
 }
 
 .container-button-bar {
-  width: auto;
+  width: 100%;
   flex-flow: row wrap;
   -webkit-overflow-scrolling: touch;
   white-space: nowrap;
