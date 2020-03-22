@@ -1,7 +1,9 @@
 <ng-container *ngIf="(userID$ | async) as userID">
   <p id="onboarding-finished-info" i18n>Done!</p>
+  <div id="onboarding-finished-icon" class="container">
+    <img src="../../assets/img/status-done-happy@3x.png" alt="happy-face" style="width: 40px; height: 40px"></div>
   <p i18n>Here is your unique ID number:</p>
-  <div class="container">
+  <div id="onboarding-finished-id" class="container">
     <mat-card>{{userID}}
       <div class="copy" (click)="copyToClipboad(userID)">
         <svg width="150" height="40">
@@ -11,7 +13,7 @@
       </div>
     </mat-card>
   </div>
-  <div id="onboarding-finished-id" class="container">
-    <p class="link" style="width: 100%" routerLink="/statustracker" i18n>Continue</p>
+  <div class="container">
+    <p class="link" style="width: 100%" routerLink="/statustracker" i18n>Weiter</p>
   </div>
 </ng-container>
