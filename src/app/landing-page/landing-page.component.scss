@@ -10,28 +10,22 @@
 
   .welcome-header {
     width: auto;
+    font-size: 3rem;
+    line-height: 1;
     font-weight: 500;
   }
 
   .welcome-text {
     margin-top: 3em;
+    font-size: 2rem;
+    line-height: 1;
     width: auto;
   }
 
-  .welcome-navigate-next {
-    margin-top: 3em;
-    width: auto;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    color: #1478b2;
-    white-space: normal;
-    line-height: 1em;
-
-    .mat-button-wrapper {
-      width: 100%;
-    }
+  .btn-card {
+    padding: 0;
   }
+
 
   /* For mobile phones: */
   [class*="col-"] {
