@@ -14,7 +14,7 @@
 </div>
 <div class="status-check-container">
   <p>Wie geht es Ihnen heute?</p>
-  <mat-grid-list cols="2" class="container-button-bar" rowHeight="50px">
+  <mat-grid-list cols="2" class="container-button-bar" rowHeight="100px" style="overflow: hidden;">
     <mat-grid-tile>
       <button mat-raised-button color="good">GUT</button>
     </mat-grid-tile>
@@ -26,33 +26,17 @@
 </div>
 <mat-divider></mat-divider>
 <div class="status-check-container">
-  <button mat-raised-button color="blue">CHECK LOCATION</button>
-  <div *ngIf="coronaLocationDetails">
+  <div>
     <p class="city">In {{city}}</p>
     <p class="message danger" *ngIf="messageDanger">{{messageDanger}} ></p>
     <mat-progress-bar mode="determinate" value="{{coronaStatus}}" style="height: 15px;"></mat-progress-bar>
   </div>
-  <div hidden>
-    <mat-grid-list cols="6" class="container-button-bar" rowHeight="200px">
-      <mat-grid-tile>
-        <button mat-stroked-button color="green">Alles super</button>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <button mat-stroked-button color="red">Corona</button>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <button mat-stroked-button color="red">Besorgt</button>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <button mat-stroked-button color="red">Krank</button>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <button mat-stroked-button color="green">Fit</button>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <button mat-stroked-button color="green">Jogg</button>
-      </mat-grid-tile>
-    </mat-grid-list>
+  <div class="container-button-bar">
+    <button mat-stroked-button color="green" class="container-button-icon">Alles super</button>
+    <button mat-stroked-button color="red" class="container-button-icon">Corona</button>
+    <button mat-stroked-button color="red" class="container-button-icon">Besorgt</button>
+    <button mat-stroked-button color="red" class="container-button-icon">Krank</button>
+    <button mat-stroked-button color="green" class="container-button-icon">Fit</button>
   </div>
 </div>
 <mat-divider></mat-divider>
