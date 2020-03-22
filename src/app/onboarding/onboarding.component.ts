@@ -17,7 +17,7 @@ export class OnboardingComponent implements OnInit {
   }
 
   submitAnswers(event) {
-    this.http.post<string>(`${environment.apiUrl}/people`, {}, {responseType: 'text'}).subscribe(token => {
+    this.http.post(`${environment.apiUrl}/people`, {}).subscribe(token => {
       this.router.navigate(['token', token]);
     });
   }
