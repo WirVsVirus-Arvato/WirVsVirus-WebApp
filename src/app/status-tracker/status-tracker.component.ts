@@ -23,5 +23,11 @@ export class StatusTrackerComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (localStorage.getItem('lastStatusSent')) {
+      const lastStatusString: number = +localStorage.getItem('lastStatusSent');
+      if ((lastStatusString + (300 * 1000)) > Date.now()) {
+        this.coronaStatusDetails = true;
+      }
+    }
   }
 }
