@@ -35,12 +35,12 @@ export class QuestionService {
       );
   }
 
-  sendAnswers(answers: Answer[]) {
+  sendAnswers(answers: Answer[]): Observable<any> {
     const answerDTOs = answers.map(answer => ({
       questionId: answer.questionId,
       token: answer.token,
       content: answer.content.join(',')
     }));
-    this.http.post(`${environment.apiUrl}/answer`, answerDTOs);
+    return this.http.post(`${environment.apiUrl}/answer`, answerDTOs);
   }
 }

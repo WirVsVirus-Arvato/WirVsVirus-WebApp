@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { TokenService } from '../shared/token.service';
 import { QuestionService } from '../shared/questionnaire/question.service';
 import { Questionnaire } from '../shared/questionnaire/questionnaire.model';
 import { Answer } from '../shared/questionnaire/answer.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-status-questionnaire',
@@ -18,7 +19,7 @@ export class StatusQuestionnaireComponent implements OnInit {
   questionnaire: Questionnaire;
   feelsBadMan$: Observable<boolean> = of(false);
 
-  constructor(private route: ActivatedRoute, private tokenSrv: TokenService, private questionSrv: QuestionService) {
+  constructor(private route: ActivatedRoute, private router: Router, private tokenSrv: TokenService, private questionSrv: QuestionService, private snackBar: MatSnackBar) {
   }
 
   ngOnInit(): void {
@@ -34,8 +35,12 @@ export class StatusQuestionnaireComponent implements OnInit {
     });
   }
 
-  async submitAnswers(answers: Answer[]) {
+  submitAnswers(answers: Answer[]) {
     answers.forEach(answer => answer.token = this.currentToken);
-    await this.questionSrv.sendAnswers(answers);
+    this.questionSrv.sendAnswers(answers).subscribe(() => {
+      this.snackBar.open('Antworten wurden übermittelt!');
+      this.router.navigate(['statustracker']);
+      localStorage.setItem('lastStatusSent', Date.now().toString());
+    });
   }
 }

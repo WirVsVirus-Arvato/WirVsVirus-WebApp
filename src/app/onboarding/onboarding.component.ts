@@ -28,7 +28,7 @@ export class OnboardingComponent implements OnInit {
   submitAnswers(answers: Answer[]) {
     this.tokenSrv.obtainAndPersistToken().subscribe(async token => {
       answers.forEach(answer => answer.token = token.token);
-      await this.questionSrv.sendAnswers(answers);
+      this.questionSrv.sendAnswers(answers).subscribe();
       this.gotoFinish(token.token);
     });
   }
