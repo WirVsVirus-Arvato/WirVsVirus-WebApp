@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'wirvsvirus-webapp';
+  quarantineDayActual: number;
+  quarantineDayGoal: number;
 }

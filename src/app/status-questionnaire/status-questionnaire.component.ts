@@ -14,12 +14,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./status-questionnaire.component.css']
 })
 export class StatusQuestionnaireComponent implements OnInit {
-
+  quarantineDayActual: number;
+  quarantineDayGoal: number;
   currentToken = undefined;
   questionnaire: Questionnaire;
   feelsBadMan$: Observable<boolean> = of(false);
+  days = Array;
 
   constructor(private route: ActivatedRoute, private router: Router, private tokenSrv: TokenService, private questionSrv: QuestionService, private snackBar: MatSnackBar) {
+    this.quarantineDayActual = 4;
+    this.quarantineDayGoal = 20;
   }
 
   ngOnInit(): void {
