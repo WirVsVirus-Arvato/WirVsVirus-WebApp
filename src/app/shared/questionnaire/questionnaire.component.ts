@@ -3,6 +3,7 @@ import { Questionnaire } from './questionnaire.model';
 import { MatSelectionListChange } from '@angular/material/list';
 import { Answer } from './answer.model';
 import { TokenService } from '../token.service';
+import { MatRadioChange } from '@angular/material/radio';
 
 @Component({
   selector: 'app-questionnaire',
@@ -58,5 +59,11 @@ export class QuestionnaireComponent implements OnInit {
       const choiceIds = $event.source.selectedOptions.selected.map(s => s.value);
       question.answer = new Answer(question.id, '', JSON.stringify(choiceIds));
     }
+  }
+
+  radioChoiceAnswer($event: MatRadioChange) {
+    const question = this.getCurrentQuestion();
+    const choice = $event.value;
+    question.answer = new Answer(question.id, '', choice);
   }
 }
