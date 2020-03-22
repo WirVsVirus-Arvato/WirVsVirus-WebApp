@@ -1,20 +1,20 @@
-<h4>Your status:</h4>
+<h4>Ihr heutiges Befinden:</h4>
 
 <ng-container *ngIf="feelsBadMan$ | async; else badbtn">
   <button mat-stroked-button class="btn-red">
-    <span i18n>Bad</span>
+    <span i18n>Schlecht</span>
   </button>
-  <h2 i18n>Sorry to hear!</h2>
+  <h2 i18n>Das tut uns leid!</h2>
 </ng-container>
 
 
 <ng-template #badbtn>
   <button mat-stroked-button class="btn-green">
-    <span i18n>Good</span>
+    <span i18n>Gut</span>
   </button>
-  <h2 i18n>Glad to hear!</h2>
+  <h2 i18n>Das freut uns!</h2>
 </ng-template>
 
-<h3>Please provide further information:</h3>
+<h3>Ihr täglicher Fragebogen:</h3>
 
 <app-questionnaire (answers)="submitAnswers($event)" [questionnaire]="questionnaire"></app-questionnaire>

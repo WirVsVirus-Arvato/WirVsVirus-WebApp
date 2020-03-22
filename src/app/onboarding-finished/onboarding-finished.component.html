@@ -1,8 +1,8 @@
 <ng-container *ngIf="(userID$ | async) as userID">
-  <p id="onboarding-finished-info" i18n>Done!</p>
+  <p id="onboarding-finished-info" i18n>Fertig, vielen Dank!</p>
   <div id="onboarding-finished-icon" class="container">
     <img src="../../assets/img/status-done-happy@3x.png" alt="happy-face" style="width: 40px; height: 40px"></div>
-  <p i18n>Here is your unique ID number:</p>
+  <p i18n>Hier ist Ihre ID:</p>
   <div id="onboarding-finished-id" class="container">
     <mat-card>{{userID}}
       <div class="copy" (click)="copyToClipboad(userID)">

@@ -9,7 +9,7 @@
           <h2>{{question.title}}</h2>
         </mat-card-title>
         <mat-card-subtitle>
-          Question {{currentIndex + 1}} of {{questionnaire.questions.length}}
+          Frage {{currentIndex + 1}} von {{questionnaire.questions.length}}
         </mat-card-subtitle>
       </mat-card-header>
 
@@ -51,14 +51,14 @@
 
       <mat-card-actions>
         <button mat-stroked-button [disabled]="currentIndex <= 0" (click)="prev()">
-          <span i18n>Previous</span>
+          <span i18n>Zurück</span>
         </button>
         <button mat-stroked-button [disabled]="getCurrentQuestion().answer === undefined || (currentIndex >= (questionnaire.questions.length - 1))" (click)="next()">
-          <span i18n>Next</span>
+          <span i18n>Weiter</span>
         </button>
         <span class="spacer"></span>
-        <button mat-stroked-button [disabled]="!canSubmit()" (click)="submit()">
-          <span i18n>Submit</span>
+        <button mat-stroked-button [disabled]="!canSubmit()" (click)="submit()" color="primary">
+          <span i18n>Absenden</span>
         </button>
       </mat-card-actions>
 
