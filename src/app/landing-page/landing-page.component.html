@@ -1,36 +1,34 @@
 <div class="landing-page-container">
   <div>
-    <div class="welcome-header" i18n>Welcome to Quarantine Companion</div>
 
-    <div style="margin-top: 5rem">
-      <img style="width:20rem" class="logo" src="../assets/undraw_medicine_b1ol.svg">
+    <div style="margin: 2rem">
+      <img style="width: 3rem" class="logo" src="../assets/qh-assets/opener.svg">
     </div>
 
-    <div class="welcome-text" i18n>Our aim is to make communication and cooperation with the health authorities easier for you.</div>
+    <div class="welcome-header" i18n>Willkommen beim Quarantänehelfer!</div>
 
-    <div style="margin-top: 3rem" *ngIf="!currentToken; else login">
-      <a [routerLink]="['/onboarding']" class="btn-card" mat-button>
-        <mat-card class="nav-card">
-          <img mat-card-image style="width:9rem; margin-top:1rem;" class="logo" src="../assets/undraw_secure_data_0rwp.svg">
-          <div class="nav-card-content">
-            <span i18n>Are you new here? Please proceed with the onboarding questionnaire</span>
-          </div>
-        </mat-card>
+
+    <div class="welcome-text" i18n>Wir erleichtern Ihnen die Kommunikation und Zusammenarbeit mit dem Gesundheitsamt.</div>
+
+    <br>
+    <mat-divider></mat-divider>
+
+    <div style="margin: 1rem 0" class="nav-link">
+      <a [routerLink]="['/onboarding']" class="btn-content">
+        <span i18n>Bitte starten Sie zum Beginn unser Aufnahmeprotokoll.</span>
       </a>
+      <mat-icon class="navigate-icon" style="color: #1073b2">navigate_next</mat-icon>
     </div>
 
-    <ng-template #login>
-      <div style="margin-top: 3rem">
-        <a [routerLink]="['/statustracker']" class="btn-card" mat-button>
-          <mat-card class="nav-card">
-            <img mat-card-image style="width:9rem; margin-top:1rem;" class="logo" src="../assets/undraw_private_data_7q35.svg">
-            <div class="nav-card-content">
-              <span i18n>Track your daily health status</span>
-            </div>
-          </mat-card>
-        </a>
-      </div>
-    </ng-template>
+    <mat-divider></mat-divider>
+
+    <div style="margin: 1rem 0" class="nav-link">
+      <a [routerLink]="['/statustracker']" class="btn-content">
+        <span i18n>Ich habe schon eine ID</span>
+      </a>
+      <mat-icon class="navigate-icon" style="color: #1073b2">navigate_next</mat-icon>
+    </div>
+
 
   </div>
 </div>
